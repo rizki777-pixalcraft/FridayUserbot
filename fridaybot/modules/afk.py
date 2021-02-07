@@ -49,10 +49,10 @@ async def _(event):
         if reason:
             await borg.send_message(
                 event.chat_id,
-                f"**Saya pergi karna:** __`{reason}`__",
+                f"Saya pergi __`{reason}`__",
             )
         else:
-            await borg.send_message(event.chat_id, f"**OK GW OFF KLO DAH**.")
+            await borg.send_message(event.chat_id, f"__Ok gw Off Dlu Bro__.")
         await asyncio.sleep(5)
         await event.delete()
         try:
@@ -79,9 +79,9 @@ async def set_not_afk(event):
     if ".afk" not in current_message and "yes" in USER_AFK:  # pylint:disable=E0602
         shite = await borg.send_message(
             event.chat_id,
-            "**Saya kembali**\n `Saya sudah pergi:``"
+            "**Saya kembali**\n `Saya sudah pergi` `"
             + total_afk_time
-            + "`",
+            + "` __Ternyata__",
         )
         try:
             await borg.send_message(  # pylint:disable=E0602
