@@ -64,9 +64,7 @@ async def friday(alive):
                   f"➥ **My Boss** : {DEFAULTUSER} \n"
                   "➥ **Heroku Database** : `AWS - Working Properly`\n\n"
                   "➥ **License** : [GNU General Public License v3.0](github.com/StarkGang/FridayUserbot/blob/master/LICENSE)\n"
-                  "➥ **Copyright** : By [StarkGang@Github](GitHub.com/StarkGang)\n"
                   "➥ **Check Stats By Doing** `.stat`. \n\n"
-                  "[🇮🇳 Deploy FridayUserbot 🇮🇳](https://telegra.ph/FRIDAY-06-15)")
     
     await borg.send_message(
         alive.chat_id,
