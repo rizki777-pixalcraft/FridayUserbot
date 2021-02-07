@@ -49,10 +49,10 @@ async def _(event):
         if reason:
             await borg.send_message(
                 event.chat_id,
-                f"**My Master Seems To Be Too Busy 👀.** \n__He Going Afk Because Of__ `{reason}`",
+                f"**Saya pergi karna:** __`{reason}`__",
             )
         else:
-            await borg.send_message(event.chat_id, f"**I Am Busy And I Am Going Afk**.")
+            await borg.send_message(event.chat_id, f"**OK GW OFF KLO DAH**.")
         await asyncio.sleep(5)
         await event.delete()
         try:
@@ -79,7 +79,7 @@ async def set_not_afk(event):
     if ".afk" not in current_message and "yes" in USER_AFK:  # pylint:disable=E0602
         shite = await borg.send_message(
             event.chat_id,
-            "__Pro is Back Alive__\n**No Longer afk.**\n `I Was afk for:``"
+            "**Saya kembali**\n `Saya sudah pergi:``"
             + total_afk_time
             + "`",
         )
@@ -139,7 +139,7 @@ async def on_afk(event):
             time %= 60
             seconds = time
             if days == 1:
-                afk_since = "**Yesterday**"
+                afk_since = "**Kemarin**"
             elif days > 1:
                 if days > 6:
                     date = now + datetime.timedelta(
@@ -150,13 +150,13 @@ async def on_afk(event):
                     wday = now + datetime.timedelta(days=-days)
                     wday.strftime("%A")
             elif hours > 1:
-                f"`{int(hours)}h{int(minutes)}m` **ago**"
+                f"`{int(hours)} Jam {int(minutes)} Menit ` **Lalu**"
             elif minutes > 0:
-                f"`{int(minutes)}m{int(seconds)}s` **ago**"
+                f"`{int(minutes)} Menit {int(seconds)} Detik` **Lalu**"
             else:
-                f"`{int(seconds)}s` **ago**"
+                f"`{int(seconds)} Detik` **Lalu**"
         msg = None
-        message_to_reply = (f"I Am **[AFK]** Right Now. \n**Last Seen :** `{total_afk_time}`\n**Reason** : `{reason}`" if reason else f"I Am **[AFK]** Right Now. \n**Last Seen :** `{total_afk_time}`")
+        message_to_reply = (f"Saya pergi dari `{total_afk_time}`\n**Karena** : `{reason}`" if reason else f"Saya tak terlihat Dari `{total_afk_time}`")
         msg = await event.reply(message_to_reply)
         await asyncio.sleep(10)
         # Spechide Bad
